@@ -191,7 +191,7 @@ p (1..15).map &self.:fizzbuzz
 #### [Numbered parameters](https://bugs.ruby-lang.org/issues/4475)
 - - -
 
-* ブロック引数を暗黙的にキャプチャする機能
+* ブロックの引数を暗黙的にキャプチャする機能
   * 略してナンパラ
 * 炎上中
 
