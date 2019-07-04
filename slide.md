@@ -95,6 +95,28 @@ p time.ceil(7).iso8601(10)  # => "2010-03-30T05:43:25.1234568000Z"
 
 ---
 
+#### [.: での method 呼び出し](https://bugs.ruby-lang.org/issues/12125)
+- - -
+
+* method(:hoge) を self.:hoge という構文で書ける
+* .:hoge とは書けないので注意
+
+```ruby
+(1..10).map(&method(:p))
+
+# が
+
+(1..10).map(&self.:p)
+
+# と書ける
+
+(1..10).map(&.:p)
+
+# とは書けない
+```
+
+---
+
 #### [先端無限Range](https://bugs.ruby-lang.org/issues/14799)
 - - -
 
@@ -114,28 +136,6 @@ def check(age)
     "11歳〜19歳です"
   end
 end
-```
-
----
-
-#### [.: での method 呼び出し](https://bugs.ruby-lang.org/issues/12125)
-- - -
-
-* method(:hoge) を self.:hoge という構文で書ける
-* .:hoge とは書けないので注意
-
-```ruby
-(1..10).map(&method(:p))
-
-# が
-
-(1..10).map(&self.:p)
-
-# と書ける
-
-(1..10).map(&.:p)
-
-# とは書けない
 ```
 
 ---
